@@ -5,7 +5,7 @@ interface Props {
 }
 export const CardImg: FC<Props> = ({ imgUrl, name }) => {
   return (
-    <div className="mb-2">
+    <div className="mb-2 relative group-hover:origin-center group-hover:scale-125">
       <img
         src={imgUrl}
         width="100"
@@ -13,6 +13,7 @@ export const CardImg: FC<Props> = ({ imgUrl, name }) => {
         className="object-contain"
         alt={name || "card img"}
       />
+      <div className="absolute right-0 bottom-[-50px] w-[100px] h-[150px] opacity-40 origin-[50%_50%] transition-all duration-[0.5s] ease-[ease-in-out] group-hover:bg-[linear-gradient(_rgba(0,0,0,0),rgba(255,255,255),rgba(0,0,0,0)_)]" />
     </div>
   );
 };

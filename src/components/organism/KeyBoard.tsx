@@ -1,11 +1,12 @@
-import RowBoards from "@src/components/molecule/RowBoards"
+import RowKeyBoards from "@src/components/molecule/RowKeyBoards"
+
 
 const KeyBoard = () => {
   return (
-    <div className="py-7 flex flex-col items-center">
-      <RowBoards.top />
-      <RowBoards.home />
-      <RowBoards.bottom />
+    <div className="pb-7 pt-4 flex flex-col items-center">
+      <RowKeyBoards.top />
+      <RowKeyBoards.home />
+      <RowKeyBoards.bottom />
     </div>
   )
 }

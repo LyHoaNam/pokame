@@ -27,9 +27,9 @@ const BottomRowKeyboard = () => {
   );
 };
 
-const RowBoards = {
+const RowKeyBoards = {
   top: TopRowKeyboard,
   home: HomeRowKeyboard,
   bottom: BottomRowKeyboard
 }
-export default RowBoards;
+export default RowKeyBoards;
