@@ -1,8 +1,10 @@
 import Slider from "react-slick";
+
 import PokeCard from "@src/components/molecule/PokeCard";
 // import "@src/lib/slick-carousel/index.css"
 import { SETTING } from "@src/lib/react-slick/setting";
 import { useInsertCSS } from "@src/lib/slick-carousel/useInsertCSS";
+
 const data = [
   { name: "duck", imgUrl: "https://i.imgur.com/p3FfEL6.png" },
   { name: "duck", imgUrl: "https://i.imgur.com/FldDlNb.png" },

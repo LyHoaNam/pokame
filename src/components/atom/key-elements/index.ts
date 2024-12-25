@@ -7,6 +7,6 @@ const KeyElements = {
   BackSpace,
   Enter,
   Line,
-  Key
-}
+  Key,
+};
 export default KeyElements;

@@ -1,5 +1,6 @@
+import type { FC } from "react";
+
 import Card from "@src/components/atom/card";
-import { FC } from "react";
 
 interface Props {
   name: string;

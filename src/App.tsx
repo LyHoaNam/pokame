@@ -1,14 +1,14 @@
-import "./index.css";
 import { Container } from "./components/atom/Container";
 import { HomePage } from "./pages";
 
-const App = () =>  {
+import "./index.css";
 
+const App = () => {
   return (
     <Container>
       <HomePage />
     </Container>
   );
-}
+};
 
 export default App;

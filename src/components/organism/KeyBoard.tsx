@@ -1,5 +1,4 @@
-import RowKeyBoards from "@src/components/molecule/RowKeyBoards"
-
+import RowKeyBoards from "@src/components/molecule/RowKeyBoards";
 
 const KeyBoard = () => {
   return (
@@ -8,6 +7,6 @@ const KeyBoard = () => {
       <RowKeyBoards.home />
       <RowKeyBoards.bottom />
     </div>
-  )
-}
+  );
+};
 export default KeyBoard;

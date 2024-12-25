@@ -1,4 +1,5 @@
 import type { ComponentType, ReactNode } from "react";
+
 import { KEYBOARD_ROWS } from "@src/constants/KEYBOARD";
 
 const LineWrapper = ({ children }: { children: ReactNode }) => {
@@ -8,10 +9,15 @@ interface Props {
   rowName: keyof typeof KEYBOARD_ROWS;
   Component: ComponentType<{ keyName: string }>;
   componentProps?: Record<string, unknown>;
-  children?: ReactNode
+  children?: ReactNode;
 }
 
-export const Line = ({ rowName, componentProps, Component, children }: Props) => {
+export const Line = ({
+  rowName,
+  componentProps,
+  Component,
+  children,
+}: Props) => {
   const rows = KEYBOARD_ROWS[rowName];
   return (
     <LineWrapper>

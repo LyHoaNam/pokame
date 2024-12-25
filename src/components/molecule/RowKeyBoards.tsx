@@ -17,10 +17,7 @@ const HomeRowKeyboard = () => {
 const BottomRowKeyboard = () => {
   return (
     <div className="">
-      <KeyElements.Line
-        rowName="bottomRow"
-        Component={KeyElements.Key}
-      >
+      <KeyElements.Line rowName="bottomRow" Component={KeyElements.Key}>
         <KeyElements.BackSpace />
       </KeyElements.Line>
     </div>
@@ -30,6 +27,6 @@ const BottomRowKeyboard = () => {
 const RowKeyBoards = {
   top: TopRowKeyboard,
   home: HomeRowKeyboard,
-  bottom: BottomRowKeyboard
-}
+  bottom: BottomRowKeyboard,
+};
 export default RowKeyBoards;

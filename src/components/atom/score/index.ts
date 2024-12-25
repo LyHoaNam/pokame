@@ -3,6 +3,6 @@ import { Point } from "./Point";
 
 const Score = {
   Circle,
-  Point
-}
-export default Score
+  Point,
+};
+export default Score;
