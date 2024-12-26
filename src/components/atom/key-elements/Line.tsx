@@ -19,6 +19,7 @@ export const Line = ({
   children,
 }: Props) => {
   const rows = KEYBOARD_ROWS[rowName];
+
   return (
     <LineWrapper>
       {rows.map((keyName, index) => (

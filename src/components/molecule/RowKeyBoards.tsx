@@ -16,7 +16,8 @@ const HomeRowKeyboard = () => {
 };
 const BottomRowKeyboard = () => {
   return (
-    <div className="">
+    <div className="flex gap-3">
+      <KeyElements.Enter />
       <KeyElements.Line rowName="bottomRow" Component={KeyElements.Key}>
         <KeyElements.BackSpace />
       </KeyElements.Line>

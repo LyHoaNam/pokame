@@ -1,6 +1,13 @@
+import { useFormStatus } from "react-dom";
+
 import RowKeyBoards from "@src/components/molecule/RowKeyBoards";
+import { useHandleRealKeyboard } from "@src/hooks/useKeyboard";
 
 const KeyBoard = () => {
+  const { pending } = useFormStatus();
+  console.log("🚀 ~ KeyBoard ~ pending:", pending);
+
+  useHandleRealKeyboard({ isDisable: pending });
   return (
     <div className="pb-7 pt-4 flex flex-col items-center">
       <RowKeyBoards.top />

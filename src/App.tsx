@@ -1,5 +1,6 @@
+import HomePage from "@src/pages";
+
 import { Container } from "./components/atom/Container";
-import { HomePage } from "./pages";
 
 import "./index.css";
 

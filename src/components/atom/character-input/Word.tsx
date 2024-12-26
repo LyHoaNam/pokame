@@ -1,16 +1,23 @@
 import { type ComponentType } from "react";
 
 interface Props {
-  word: string;
+  word: string[];
+  lenWord: number;
   Component: ComponentType<{ character: string }>;
   componentProps?: Record<string, unknown>;
 }
-export const Word = ({ word, componentProps, Component }: Props) => {
+export const Word = ({ word, componentProps, Component, lenWord }: Props) => {
   return (
     <div className="flex gap-1">
-      {word.split("").map((char, idx) => (
-        <Component key={`char-${idx}`} character={char} {...componentProps} />
-      ))}
+      {Array(lenWord)
+        .fill(0)
+        .map((_, idx) => (
+          <Component
+            key={`char-${idx}`}
+            character={word[idx]}
+            {...componentProps}
+          />
+        ))}
     </div>
   );
 };
