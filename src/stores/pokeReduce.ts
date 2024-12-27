@@ -1,8 +1,11 @@
-import type { PokeState } from "./pokeType";
+import type { PokeCard, PokeState } from "./pokeType";
 
 export type PokeAction =
   | { type: "INPUT_KEYBOARD"; payload: string }
-  | { type: "BACKSPACE"; payload: string };
+  | { type: "BACKSPACE"; payload: string }
+  | { type: "INITIAL_POKE"; payload: PokeCard[] }
+  | { type: "SUCCESS" }
+  | { type: "FAIL" };
 
 export const pokeReducer = (
   state: PokeState,
@@ -25,6 +28,27 @@ export const pokeReducer = (
         ...state,
         inputValue: removeLastCharacter,
         keyPressing: action.payload,
+      };
+    case "INITIAL_POKE":
+      return {
+        ...state,
+        pokes: action.payload,
+        activeIndex: 0,
+        defaultName: action.payload[0].name,
+      };
+    case "SUCCESS":
+      return {
+        ...state,
+        activeIndex: state.activeIndex + 1,
+        defaultName: state.pokes[state.activeIndex + 1].name,
+        point: state.point + 1,
+        inputValue: "",
+      };
+    case "FAIL":
+      return {
+        ...state,
+        point: state.point - 1 > 0 ? state.point - 1 : 0,
+        inputValue: "",
       };
     default:
       return state;

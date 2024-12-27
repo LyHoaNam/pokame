@@ -1,6 +1,6 @@
 import { use } from "react";
 
-import { PokeContext } from "@src/stores/PokeStore";
+import { PokeContext } from "@src/stores/pokeProvider";
 import type { PokeState } from "@src/stores/pokeType";
 
 export const usePoke = () => {
@@ -11,7 +11,9 @@ export const usePoke = () => {
   return context;
 };
 
-export const usePokeSelector = (selectState: keyof PokeState) => {
+export const usePokeSelector = <T extends keyof PokeState>(
+  selectState: T
+): PokeState[T] => {
   const { state } = use(PokeContext);
   if (!selectState) {
     throw new Error("selectState must be valid");

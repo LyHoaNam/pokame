@@ -1,12 +1,22 @@
+import { getApi } from "@src/utils/api";
+
 export const actionFormPoke = () => {
   const inputName = "pokeName";
-  const actionName = async (_: string, formData: FormData): Promise<string> => {
+  const actionName = async (
+    _: string,
+    formData: FormData
+  ): Promise<"SUCCESS" | "FAIL"> => {
     const itemName = (formData.get(inputName) as string) || "";
-    await new Promise((resolve) => {
-      setTimeout(resolve, 2000);
-    });
-    console.log("🚀 ~ actionName ~ itemName:", itemName);
-    return itemName;
+    try {
+      const response = await getApi(`/${itemName}`);
+      if (response) {
+        return "SUCCESS";
+      }
+    } catch (e) {
+      console.log(e);
+      return "FAIL";
+    }
+    return "FAIL";
   };
   return {
     inputName,

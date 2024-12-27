@@ -7,6 +7,8 @@ export const initialPokeState: PokeContextType["state"] = {
   activeIndex: 0,
   defaultName: "spyduck",
   keyPressing: "",
+  pokes: [],
+  point: 0,
 };
 
 const initialState: PokeContextType = {
@@ -15,4 +17,4 @@ const initialState: PokeContextType = {
 };
 
 export const PokeContext = createContext<PokeContextType>(initialState);
-export const PokeContextProvider = PokeContext.Provider;
+export const PokeContextProvider = PokeContext;

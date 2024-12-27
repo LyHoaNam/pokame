@@ -5,7 +5,6 @@ import { useHandleRealKeyboard } from "@src/hooks/useKeyboard";
 
 const KeyBoard = () => {
   const { pending } = useFormStatus();
-  console.log("🚀 ~ KeyBoard ~ pending:", pending);
 
   useHandleRealKeyboard({ isDisable: pending });
   return (
