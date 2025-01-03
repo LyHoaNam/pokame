@@ -19,3 +19,28 @@ export const getApi = async (url: string) => {
     throw new Error(`Fetch error: ${e}`);
   }
 };
+
+export const postTracking = async (url: string) => {
+  try {
+    await new Promise((resolve) => {
+      setTimeout(resolve, 2000);
+    });
+    // const response = await fetch(`${API_TRACK_URL}${url}`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+
+    // if (!response.ok) {
+    //   throw new Error(`HTTP error! Status: ${response.status}`);
+    // }
+
+    // const data = await response.json();
+    const cache = new Map();
+    cache.set(url, "a");
+    return cache.get(url);
+  } catch (e) {
+    throw new Error(`Fetch error: ${e}`);
+  }
+};

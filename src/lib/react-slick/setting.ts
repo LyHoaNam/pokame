@@ -1,6 +1,8 @@
+export const NUMBER_CARD = 3;
+
 export const SETTING = {
-  slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToShow: NUMBER_CARD,
+  slidesToScroll: NUMBER_CARD,
   dots: false,
   speed: 100,
   accessibility: false,
@@ -9,4 +11,5 @@ export const SETTING = {
   // autoplay: true,
   // autoplaySpeed: 100,
   cssEase: "linear",
+  draggable: false,
 };
