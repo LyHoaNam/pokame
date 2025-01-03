@@ -13,9 +13,6 @@ export const pokeReducer = (
 ): PokeState => {
   switch (action.type) {
     case "INPUT_KEYBOARD":
-      if (state.activeName.length === state.inputValue.length) {
-        return state;
-      }
       const fullValue = state.inputValue + action.payload;
       return {
         ...state,

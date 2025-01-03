@@ -2,6 +2,7 @@ import { useActionState, useEffect, useRef } from "react";
 import VirtualForm from "src/components/molecule/VirtualForm";
 
 import KeyBoard from "@src/components/molecule/KeyBoard";
+import { PendingPoke } from "@src/components/molecule/PendingPoke";
 import WordBoard from "@src/components/molecule/WordBoard";
 import { useDispatch } from "@src/hooks/core";
 import { actionFormPoke } from "@src/services/formpoke";
@@ -28,6 +29,7 @@ const FormPoke = () => {
       </p>
       <WordBoard />
       <KeyBoard />
+      <PendingPoke />
       <VirtualForm ref={ref} />
     </form>
   );
