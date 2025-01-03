@@ -13,3 +13,16 @@ export const SETTING = {
   cssEase: "linear",
   draggable: false,
 };
+
+export const SETTING_RIDER = {
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  dots: false,
+  speed: 700,
+  accessibility: false,
+  arrows: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 1000,
+  cssEase: "linear",
+};

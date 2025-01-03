@@ -4,7 +4,7 @@ export interface PokeState {
   inputValue: string;
   activeIndex: number;
   point: number;
-  defaultName: string;
+  activeName: string;
   keyPressing: string;
   pokes: PokeCard[];
 }

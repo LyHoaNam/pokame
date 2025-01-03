@@ -1,10 +1,12 @@
 import Timer from "@src/components/atom/timer";
+import { usePokeSelector } from "@src/hooks/core";
 
 const CountdownTimer = () => {
+  const activeIndex = usePokeSelector("activeIndex");
   return (
     <div className="absolute top-12 left-8">
       <Timer.Case>
-        <Timer.Time time={60} />
+        <Timer.Time time={activeIndex} />
       </Timer.Case>
     </div>
   );

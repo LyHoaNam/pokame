@@ -5,7 +5,7 @@ import type { PokeContextType } from "./pokeType";
 export const initialPokeState: PokeContextType["state"] = {
   inputValue: "",
   activeIndex: 0,
-  defaultName: "spyduck",
+  activeName: "spyduck",
   keyPressing: "",
   pokes: [],
   point: 0,

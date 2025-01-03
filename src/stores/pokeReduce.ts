@@ -13,7 +13,7 @@ export const pokeReducer = (
 ): PokeState => {
   switch (action.type) {
     case "INPUT_KEYBOARD":
-      if (state.defaultName.length === state.inputValue.length) {
+      if (state.activeName.length === state.inputValue.length) {
         return state;
       }
       const fullValue = state.inputValue + action.payload;
@@ -34,13 +34,13 @@ export const pokeReducer = (
         ...state,
         pokes: action.payload,
         activeIndex: 0,
-        defaultName: action.payload[0].name,
+        activeName: action.payload[0].name,
       };
     case "SUCCESS":
       return {
         ...state,
         activeIndex: state.activeIndex + 1,
-        defaultName: state.pokes[state.activeIndex + 1].name,
+        activeName: state.pokes[state.activeIndex + 1].name,
         point: state.point + 1,
         inputValue: "",
       };
