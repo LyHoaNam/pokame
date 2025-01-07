@@ -7,3 +7,18 @@ export const IMG_TYPE = "jpg";
 
 export const API_TRACK_URL =
   "https://api.eazy-mock.teqn.asia/mock/37ccaaae-8c5a-4fc4-8eca-b398707c38d9/238";
+
+export const INIT_DATA = [
+  {
+    name: "ditto",
+    url: "https://pokeapi.co/api/v2/pokemon/131/",
+  },
+  {
+    name: "ditto",
+    url: "https://pokeapi.co/api/v2/pokemon/131/",
+  },
+  {
+    name: "ditto",
+    url: "https://pokeapi.co/api/v2/pokemon/131/",
+  },
+];

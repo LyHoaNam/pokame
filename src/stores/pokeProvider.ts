@@ -1,5 +1,7 @@
 import { createContext } from "react";
 
+import { LIMIT, OFFSET } from "@src/constants/BASE";
+
 import type { PokeContextType } from "./pokeType";
 
 export const initialPokeState: PokeContextType["state"] = {
@@ -9,6 +11,10 @@ export const initialPokeState: PokeContextType["state"] = {
   keyPressing: "",
   pokes: [],
   point: 0,
+  option: {
+    limit: LIMIT,
+    offset: OFFSET,
+  },
 };
 
 const initialState: PokeContextType = {

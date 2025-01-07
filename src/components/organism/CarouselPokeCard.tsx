@@ -1,14 +1,18 @@
 import { useEffect, useRef } from "react";
 import Slider from "react-slick";
 
-import PokeCard from "@src/components/molecule/PokeCard";
+import PokemonCard from "@src/components/molecule/PokeCard";
 import { usePokeSelector } from "@src/hooks/core";
 // import "@src/lib/slick-carousel/index.css"
 import { SETTING } from "@src/lib/react-slick/setting";
 import { useInsertCSS } from "@src/lib/slick-carousel/useInsertCSS";
+import type { PokeCard } from "@src/stores/pokeType";
 import { getUrlImg } from "@src/utils";
 
-export const CarouselPokeCard = () => {
+interface IProps {
+  pokes: PokeCard[];
+}
+export const CarouselPokeCard: React.FC<IProps> = ({ pokes }) => {
   // ( ˘▽˘)っ♨
   useInsertCSS();
   // instead of import like commend above, insert css to head.
@@ -17,7 +21,8 @@ export const CarouselPokeCard = () => {
   // reduce css from 8.16 to 7.04
 
   const ref = useRef(null);
-  const pokes = usePokeSelector("pokes");
+  // const pokes = usePokeSelector("pokes");
+
   const activeIndex = usePokeSelector("activeIndex");
   useEffect(() => {
     if (activeIndex % 3 === 0) {
@@ -33,7 +38,7 @@ export const CarouselPokeCard = () => {
     <section className="">
       <Slider {...SETTING} ref={ref}>
         {pokes.map((record, idx) => (
-          <PokeCard
+          <PokemonCard
             key={idx}
             imgUrl={getUrlImg(record.name)}
             name={record.name}
