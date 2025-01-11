@@ -1,9 +1,10 @@
-import type { PokeCard, PokeState } from "./pokeType";
+import type { IOption, PokeCard, PokeState } from "./pokeType";
 
 export type PokeAction =
   | { type: "INPUT_KEYBOARD"; payload: string }
   | { type: "BACKSPACE"; payload: string }
   | { type: "INITIAL_POKE"; payload: PokeCard[] }
+  | { type: "SELECT_LEVEL"; payload: IOption }
   | { type: "SUCCESS" }
   | { type: "FAIL" };
 
@@ -46,6 +47,11 @@ export const pokeReducer = (
         ...state,
         point: state.point - 1 > 0 ? state.point - 1 : 0,
         inputValue: "",
+      };
+    case "SELECT_LEVEL":
+      return {
+        ...state,
+        option: action.payload,
       };
     default:
       return state;
