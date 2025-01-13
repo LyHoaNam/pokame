@@ -31,6 +31,7 @@ export const useGetApi = () => {
           const pokes = shuffle<PokeCard>(
             data.results.filter((record: { name: string }) => record.name)
           );
+          dispatch({ type: "INITIAL_POKE", payload: pokes });
           setData(pokes);
         }
       });
