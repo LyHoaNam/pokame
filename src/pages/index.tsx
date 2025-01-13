@@ -16,18 +16,19 @@ const Page: FC = () => {
   const { pokes } = useGetApi();
 
   return (
-    <>
+    <div>
       <Header />
       <SubHeader />
-      <ScoreBoard />
-      <IndexCounter />
       <CarouselType />
-      <br />
-      <CarouselPokeCard pokes={pokes} />
-
+      <div className="w-[calc(100%_-_10px)] h-[calc(100%_-_10px)] home mx-auto">
+        <ScoreBoard />
+        <IndexCounter />
+        <br />
+        <CarouselPokeCard pokes={pokes} />
+        <FormPoke />
+      </div>
       <OptionLevel />
-      <FormPoke />
-    </>
+    </div>
   );
 };
 

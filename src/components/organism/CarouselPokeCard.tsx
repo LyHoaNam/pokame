@@ -35,7 +35,7 @@ export const CarouselPokeCard: React.FC<IProps> = ({ pokes }) => {
     return <div>loading</div>;
   }
   return (
-    <section className="">
+    <section className="mt-2">
       <Slider {...SETTING} ref={ref}>
         {pokes.map((record, idx) => (
           <PokemonCard
