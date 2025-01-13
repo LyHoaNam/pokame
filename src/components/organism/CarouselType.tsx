@@ -6,7 +6,7 @@ import { SETTING_RIDER } from "@src/lib/react-slick/setting";
 
 const CarouselType = () => {
   return (
-    <section className="m-auto w-9/12">
+    <section className="m-auto w-9/12 px-4 mb-2">
       <Slider {...SETTING_RIDER}>
         {POKE_TYPES.map((label, index) => (
           <Label.Poke label={label} key={index} />
