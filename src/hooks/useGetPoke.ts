@@ -24,15 +24,21 @@ export const useGetApi = () => {
     (async () => {
       startTransition(async () => {
         addOptimistic(INIT_DATA);
-        const data = await getApi(
-          `/?limit=${option.limit}&offset=${option.offset}`
-        );
-        if (data.results && data.results.length > 0) {
-          const pokes = shuffle<PokeCard>(
-            data.results.filter((record: { name: string }) => record.name)
+        try {
+          const data = await getApi(
+            `/?limit=${option.limit}&offset=${option.offset}`
           );
-          dispatch({ type: "INITIAL_POKE", payload: pokes });
-          setData(pokes);
+          if (data.results && data.results.length > 0) {
+            const pokes = shuffle<PokeCard>(
+              data.results.filter((record: { name: string }) => record.name)
+            );
+            dispatch({ type: "INITIAL_POKE", payload: pokes });
+            setData(pokes);
+            return;
+          }
+        } catch (e) {
+          console.log(e);
+          setData(data);
         }
       });
     })();
